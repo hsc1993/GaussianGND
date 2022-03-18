@@ -48,7 +48,7 @@ The goals for this repository are:
 
 ## Install
 
-This project uses python, MATLAB and OVITO.  [python](https://www.python.org/)
+This project uses [python](https://www.python.org/), [MATLAB](https://www.mathworks.com/products/matlab.html) and [OVITO](https://www.ovito.org/).  
 
 ```sh
 $ npm install --global standard-readme-spec
