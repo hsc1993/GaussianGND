@@ -32,7 +32,12 @@ Once atomistic results are obtained from MD, use OVITO to export XYZ file that c
 There are two types of meshes available: [Voronoi Tessellation](full_voronoi_random) and [regular Hexahedron Tesselation](full_voronoi_edgevariate). To construct spatial tessellation, run the MATLAB code and the coordinates of all volume mesh vertices will be saved into text files.
 
 ### Gaussian GND calculation
-The [main.py](main.py) calculates the GND density by combining the dislocation information and meshed volumes. The output from this script includes: 1. Simulation parameters like the mesh size and the dimension of the simulation volume; 2. Volume of each meshed volume element; 3. GND signal intensity of each meshed volume element; 4. Vertices for dislocation segments after considering the truncating effect of meshed volume elements; 5. The correspondence between each dislocation segment and the meshed volume element that fully contains it.
+The [main.py](main.py) calculates the GND density by combining the dislocation information and meshed volumes. The output from this script includes: 
+1. Simulation parameters like the mesh size and the dimension of the simulation volume; 
+2. Volume of each meshed volume element; 
+3. GND signal intensity of each meshed volume element; 
+4. Vertices for dislocation segments after considering the truncating effect of meshed volume elements; 
+5. The correspondence between each dislocation segment and the meshed volume element that fully contains it.
 
 
 ## Example
