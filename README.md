@@ -3,76 +3,41 @@
 This repository superimposes atomistic data from MD simulation onto spatial tessellations, calculating mesh size dependent GND (geometrically necessary dislocation) signal. 
 
 The project consists of three parts: 
-1. analyzing output from OVITO and export txt files containing atomistic defect information 
-2. generating spatial tessellation using open-source library
-3. using cell-edge detection process to overlay defect information with spatial tessellation to generate GND signal
+1. Analyzing **atomistic data** using OVITO and export TXT files containing dislocation information.
+2. Generating **spatial tessellation** using open-source library.
+3. Using **cell-edge detection process** to overlay dislocation information with spatial tessellation to generate GND signal.
 
 
 ## Table of Contents
 
-- [Background](#background)
 - [Install](#install)
 - [Usage](#usage)
-	- [Generator](#generator)
 - [Examples](#example)
-- [Related Efforts](#related-efforts)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
 - [License](#license)
 
-## Background
-
-
-
-The goals for this repository are:
-
-1. A well defined **specification**. This can be found in the [Spec document](spec.md). It is a constant work in progress; please open issues to discuss changes.
-2. **An example README**. This Readme is fully standard-readme compliant, and there are more examples in the `example-readmes` folder.
-3. A **linter** that can be used to look at errors in a given Readme. Please refer to the [tracking issue](https://github.com/RichardLitt/standard-readme/issues/5).
-4. A **generator** that can be used to quickly scaffold out new READMEs. See [generator-standard-readme](https://github.com/RichardLitt/generator-standard-readme).
-5. A **compliant badge** for users. See [the badge](#badge).
 
 ## Install
 
-This project uses [python](https://www.python.org/), [MATLAB](https://www.mathworks.com/products/matlab.html) and [OVITO](https://www.ovito.org/).  
+This project consists of code developed in [Python](https://www.python.org/) and [MATLAB](https://www.mathworks.com/products/matlab.html). Commercial Software [OVITO](https://www.ovito.org/) is used for data processing. 
 
-```sh
-$ npm install --global standard-readme-spec
-```
 
 ## Usage
 
-This is only a documentation package. You can print out [spec.md](spec.md) to your console:
+### Dislocation extraction
+Once atomistic results are obtained from MD, use OVITO to export XYZ file that contains coordinates of all particles. Then the python script [dxa_analysis.py](dxa_analysis.py), which is built upon, [OVITO's Python interface](https://ovito.org/manual/python/introduction/running.html) extracts dislocation information from the XYZ file. 
 
-```sh
-$ standard-readme-spec
-# Prints out the standard-readme spec
-```
+### Spatial tessellation
+There are two types of meshes available: [Voronoi Tessellation](full_voronoi_random) and [regular Hexahedron Tesselation](full_voronoi_edgevariate). To construct spatial tessellation, run the MATLAB code and the coordinates of all volume mesh vertices will be saved into text files.
 
-### Generator
+### Gaussian GND calculation
+The [main.py](main.py) calculates the GND density by combining the dislocation information and meshed volumes. The output from this script includes: 1. Simulation parameters like the mesh size and the dimension of the simulation volume; 2. Volume of each meshed volume element; 3. GND signal intensity of each meshed volume element; 4. Vertices for dislocation segments after considering the truncating effect of meshed volume elements; 5. The correspondence between each dislocation segment and the meshed volume element that fully contains it.
 
-To use the generator, look at [generator-standard-readme](https://github.com/RichardLitt/generator-standard-readme). There is a global executable to run the generator in that package, aliased as `standard-readme`.
-
-## Badge
-
-If your README is compliant with Standard-Readme and you're on GitHub, it would be great if you could add the badge. This allows people to link back to this Spec, and helps adoption of the README. The badge is **not required**.
-
-[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
-
-To add in Markdown format, use this code:
-
-```
-[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
-```
 
 ## Example
 
 To see how the specification has been applied, see the [example-readmes](example-readmes/).
-
-## Related Efforts
-
-- [Art of Readme](https://github.com/noffle/art-of-readme) - 💌 Learn the art of writing quality READMEs.
-- [open-source-template](https://github.com/davidbgk/open-source-template/) - A README template to encourage open-source contributions.
 
 ## Maintainers
 
