@@ -36,13 +36,12 @@ The [main.py](main.py) calculates the GND density by combining the dislocation i
 1. Simulation parameters like the mesh size and the dimension of the simulation volume; 
 2. Volume of each meshed volume element; 
 3. GND signal intensity of each meshed volume element; 
-4. Vertices for dislocation segments after considering the truncating effect of meshed volume elements; 
+4. Vertices of dislocation segments with the truncating effect of meshed volume elements; 
 5. The correspondence between each dislocation segment and the meshed volume element that fully contains it.
 
 
 ## Example
 
-To see how the specification has been applied, see the [example-readmes](example-readmes/).
 
 ## Maintainers
 
