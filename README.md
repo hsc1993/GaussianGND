@@ -26,7 +26,7 @@ This project consists of code developed in [Python](https://www.python.org/) and
 ## Usage
 
 ### Dislocation extraction
-Once atomistic results are obtained from MD, use OVITO to export XYZ file that contains coordinates of all particles. Then the python script [dxa_analysis.py](dxa_analysis.py), which is built upon, [OVITO's Python interface](https://ovito.org/manual/python/introduction/running.html) extracts dislocation information from the XYZ file. 
+Once atomistic results are obtained from MD, use OVITO to export XYZ file that contains coordinates of all particles. Then the python script [dxa_analysis.py](dxa_analysis.py), which is built upon, [OVITO's Python interface](https://docs.ovito.org/python/) extracts dislocation information from the XYZ file. 
 
 ### Spatial tessellation
 There are two types of meshes available: [Voronoi Tessellation](full_voronoi_random) and [regular Hexahedron Tesselation](full_voronoi_edgevariate). To construct spatial tessellation, run the MATLAB code and the coordinates of all volume mesh vertices will be saved into text files.
