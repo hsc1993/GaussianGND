@@ -41,7 +41,6 @@ The [main.py](main.py) calculates the GND density by combining the dislocation i
 
 
 ## Example
-https://user-images.githubusercontent.com/56003395/227333746-c0249328-7a25-4444-899a-64329008e719.mp4
 
 
 
