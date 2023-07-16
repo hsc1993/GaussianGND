@@ -1,6 +1,6 @@
 # Gaussian GND
 
-This repository superimposes atomistic data from MD simulation onto spatial tessellations, calculating mesh size dependent GND (geometrically necessary dislocation) signal. 
+This repository superimposes atomistic data for dislocations from MD simulation onto spatial tessellations, calculating mesh size dependent GND (geometrically necessary dislocation) signal. 
 
 The project consists of three parts: 
 1. Analyzing **atomistic data** using OVITO and export TXT files containing dislocation information.
