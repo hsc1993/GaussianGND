@@ -27,7 +27,9 @@ This project consists of code developed in [Python](https://www.python.org/) and
 
 ### Dislocation extraction
 Starting from the [sample MD result]() of Fe grain boundary with a prismatic loop, we use OVITO to export XYZ file that contains coordinates of all particles. The set up for OVITO is according to the image below:
+
 <img src="dislocation.png" width="400" height="400">
+<img src="ovito_setup.png" width="400" height="400">
 
 The output file should look like the [dislocation.XYZ](). Then the python script [dxa_analysis.py](dxa_analysis.py), which is built upon, [OVITO's Python interface](https://docs.ovito.org/python/) extracts dislocation information from the XYZ file. 
 
