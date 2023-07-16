@@ -31,7 +31,7 @@ Starting from the [sample MD result]() of Fe grain boundary with a prismatic loo
   src="dislocation.png"
   alt="dislocation"
   title="Optional title"
-  style="display: inline-block; margin: 0 auto; max-width: 300px">
+  style="display: inline-block; margin: 0 auto; max-width: 100px">
   
 
 The output file should look like the [dislocation.XYZ](). Then the python script [dxa_analysis.py](dxa_analysis.py), which is built upon, [OVITO's Python interface](https://docs.ovito.org/python/) extracts dislocation information from the XYZ file. 
