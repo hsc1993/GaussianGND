@@ -30,7 +30,7 @@ Starting from the [sample MD result]() of Fe grain boundary with a prismatic loo
 
 <img src="ovito_setup.png" width="400" height="700">  <img src="dislocation.png" width="400" height="700"> 
 
-The output file should look like the [dislocation.XYZ](). Then the python script [dxa_analysis.py](dxa_analysis.py), which is built upon [OVITO's Python interface](https://docs.ovito.org/python/) extracts dislocation information from the XYZ file and outputs dislocation data into txt files of for the types '100',[110],[111] and other. 
+The output file should look like the [dislocation.XYZ](). Then the python script [dxa_analysis.py](dxa_analysis.py), which is built upon [OVITO's Python interface](https://docs.ovito.org/python/) extracts dislocation information from the XYZ file and outputs dislocation data into txt files of for the types '100','110','111' and other. 
 
 ### Spatial tessellation
 There are two types of meshes available: [Voronoi Tessellation](full_voronoi_random.m) and [regular Hexahedron Tesselation](full_voronoi_cubic_edgevariate.m). To construct spatial tessellation, run the MATLAB code and the coordinates of all volume mesh vertices will be saved into text files.
