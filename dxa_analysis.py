@@ -2,6 +2,7 @@
 
 import math
 import ovito
+
 from ovito import modifiers
 from ovito.io import import_file, export_file
 from ovito.modifiers import DislocationAnalysisModifier
@@ -11,8 +12,7 @@ from ovito.vis import ParticlesVis
 from ovito.modifiers import SelectTypeModifier, DeleteSelectedModifier
 import os.path
 
-from ovito.io.ase import ovito_to_ase
-
+# from ovito.io.ase import ovito_to_ase
 
 def write_cell_to_text(cell_data):
     cell_file_name = 'cell.txt'
@@ -71,10 +71,9 @@ def main():
     # precision for burgers vector determination
     epsilon = 1e-3
 
-    pipeline = import_file('before_absorption.xyz')
-    # pipeline = import_file('bigerloop_10frame.xyz')
-    # pipeline = import_file('frame19.xyz')
+    pipeline = import_file('dislocation.xyz')
     print('import complete')
+
     ####### modifiers #######
     # Extract dislocation lines from a crystal with BCC structure:
     modifier_dxa = DislocationAnalysisModifier()
@@ -105,6 +104,7 @@ def main():
     dislocation_100 = []
     dislocation_110 = []
 
+    # idices used to iterate through different burgers vector type loops
     idx_among_100 = 0
     idx_among_110 = 0
     idx_among_111 = 0
@@ -152,11 +152,6 @@ def main():
     print('number of 111: ', len(dislocation_111))
     print('number of other: ', len(dislocation_other))
 
-    #
-    # print('data.objects=', data.objects)
-    # print('total num of dislocation detected = ',
-    #       len(dislocation_100) + len(dislocation_110) + len(dislocation_111) + len(dislocation_other))
-
     pipeline.add_to_scene()
     data.cell.vis.rendering_color = (1, 0, 0)
     data.cell.vis.enabled = True
@@ -186,21 +181,6 @@ def main():
     export_file(pipeline, "output.xyz", "xyz", columns=
     ["Particle Identifier", "Particle Type", "Position.X", "Position.Y", "Position.Z"]
                 )
-
-    # printing 100 dislocations
-    # for segment in dislocation_100:
-    #     print('[')
-    #     for i in range(3):
-    #         print(segment.points[i][0], ',', segment.points[i][1], ',', segment.points[i][2],',')
-    #     print(']')
-
-    # printing 100 dislocations
-    # for segment in dislocation_110:
-    #     print('[')
-    #     for i in range(3):
-    #         print(segment.points[i][0], ',', segment.points[i][1], ',', segment.points[i][2],',')
-    #     print(']')
-    #
 
 if __name__ == "__main__":
     main()

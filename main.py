@@ -64,13 +64,7 @@ from os import path
 
 
 def main():
-    case_string = 'before'
-    # case_string = 'during'
-    # case_string = 'after'
-    #
-    # case_string = 'before_cubic_edgevariate'
-    # case_string = 'during_cubic_edgevariate'
-    # case_string = 'after_cubic_edgevariate'
+    case_string = 'voronoi'
 
     number_seeds_list = []
     n = int(input("Enter length of seeds' list : "))
