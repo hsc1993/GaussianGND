@@ -1,4 +1,4 @@
-# Gaussian GND
+# Gaussian GND [![DOI](https://zenodo.org/badge/470862080.svg)](https://zenodo.org/badge/latestdoi/470862080)
 
 This repository superimposes atomistic data for dislocations from MD simulation onto spatial tessellations, calculating mesh size dependent GND (geometrically necessary dislocation) signal. 
 
